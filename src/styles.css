@@ -1,0 +1,31 @@
+:root { --bg:#eef1f6; --ink:#16202e; --line:#c9d1de; --x:#3b4cca; --o:#0c8f7d; --win:#ffe08a; font-family:'Space Grotesk',system-ui,sans-serif; color:var(--ink); }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); }
+.app { max-width:900px; margin:0 auto; padding:2rem 1rem; }
+h1 { font-size:2.2rem; margin:0 0 1rem; letter-spacing:-0.02em; }
+h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+button { font:inherit; cursor:pointer; border:1.5px solid var(--ink); background:#fff; color:var(--ink); padding:.5rem .9rem; border-radius:6px; }
+button:disabled { opacity:.4; cursor:not-allowed; }
+button:focus-visible { outline:3px solid var(--x); outline-offset:2px; }
+.modes { display:flex; gap:.5rem; margin-bottom:1.5rem; }
+.modes .on { background:var(--ink); color:#fff; }
+.play { display:grid; grid-template-columns:auto 1fr; gap:2.5rem; align-items:start; }
+.banner { font-size:1.6rem; font-weight:700; margin:0 0 .75rem; }
+.banner.Won { color:var(--x); } .banner.Draw { color:#6a7385; }
+.board { display:grid; grid-template-columns:repeat(3, 96px); gap:6px; background:var(--ink); padding:6px; border-radius:10px; }
+.cell { width:96px; height:96px; font-size:3rem; font-weight:700; border:0; border-radius:4px; background:#fff; padding:0; }
+.cell:disabled { opacity:1; cursor:default; }
+.cell:not(:disabled):hover { background:#f2f5fb; }
+.cell.X { color:var(--x); } .cell.O { color:var(--o); }
+.cell.win { background:var(--win); }
+.actions { display:flex; gap:.5rem; }
+.error { min-height:1.4rem; color:#b3261e; margin:.5rem 0; }
+.score { display:flex; gap:1rem; margin:0; }
+.score div { background:#fff; border:1.5px solid var(--line); border-radius:8px; padding:.5rem 1rem; text-align:center; min-width:70px; }
+.score dt { font-size:.85rem; color:#6a7385; } .score dd { margin:0; font-size:1.6rem; font-weight:700; }
+.link { margin-top:.6rem; border-color:var(--line); }
+table { border-collapse:collapse; width:100%; background:#fff; }
+th, td { text-align:left; padding:.4rem .6rem; border-bottom:1px solid var(--line); }
+.muted { color:#6a7385; }
+@media (max-width:700px) { .play { grid-template-columns:1fr; } }
+@media (prefers-reduced-motion:no-preference) { .cell { transition:background .15s; } }
